@@ -1,3 +1,4 @@
+from socket import gethostname, gethostbyname
 from flask import Flask, render_template, request, jsonify
 from volume_control import Volume
 
@@ -37,4 +38,11 @@ def mute_speaker():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8888, debug=True)
+    HOST = '0.0.0.0'
+    PORT = 8888
+    print(
+        "\nCreating connection on http://{}:{}\n".format(
+            gethostbyname(gethostname()), PORT
+        )
+    )
+    app.run(host=HOST, port=PORT, debug=False)
