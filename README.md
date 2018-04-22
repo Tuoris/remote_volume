@@ -1,6 +1,6 @@
 # Remote volume controll app
 
-Web application for remote controlling master volume level, mute and unmute on Windows Vista and above.
+Web application for remote controlling master volume level, muting and unmuting on Windows Vista and above.
 
 ## Getting Started
 
