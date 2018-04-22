@@ -1,0 +1,9 @@
+Licensed under a Creative Commons Attribution 4.0 (CC BY) International License.
+https://creativecommons.org/licenses/by/4.0/
+
+Except where otherwise noted, this content is published under a CC BY license, which means that you can copy,
+redistribute, remix, transform and build upon the content for any purpose even commercially as long as you give
+appropriate credit and provide a link to the license.
+
+The images "volume_on.png" and "volume_mute.png" in this folder belong to Font Awesome (https://fontawesome.com/)
+and are rasterized by FA2PNG (http://fa2png.io).
