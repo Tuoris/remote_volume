@@ -1,6 +1,22 @@
+html,
+body {
+    background: #fcfcfc;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
 #app {
     font-family: monospace;
     font-size: 22px;
+    text-align: center;
+}
+
+.new-app {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 [v-cloak] {
@@ -22,6 +38,11 @@
     height: 2em;
 }
 
+#mute-button.large-icons img {
+    width: 4em;
+    height: 4em;
+}
+
 #app .level {
     display: inline-block;
     width: 3em;
@@ -34,4 +55,99 @@
     margin-top: 0;
     position: relative;
     top: 0.5em;
+}
+
+#droplet-container {
+    display: inline-block;
+    width: calc(100% - 6em);
+    font-size: 40px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#stripe {
+    width: 100%;
+    min-width: .05em;
+    height: 0.5em;
+    border-radius: 0.4em;
+    background: #34495e;
+}
+
+.droplet {
+    position: absolute;
+    z-index: 2;
+    width: 2em;
+    height: 2em;
+    right: -1em;
+    font-family: monospace;
+    color: #34495e;
+    user-select: none;
+}
+
+#droplet {
+    top: 1.5em;
+}
+
+#top-droplet {
+    top: -2.98em;
+}
+
+.droplet::after {
+    display: inline-block;
+    box-sizing: border-box;
+    content: " ";
+    width: 2em;
+    height: 2em;
+    position: relative;
+    z-index: -1;
+    margin-top: -0.6em;
+    border: 0.1em solid #34495e;
+    background-color: white;
+    border-radius: 50%;
+    border-top-left-radius: 0;
+    transform: rotate(45deg);
+}
+
+#droplet::after {
+    background-color: #34495e;
+}
+
+#top-droplet::after {
+    transform: rotate(-135deg);
+}
+
+.droplet .value {
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 1em;
+    top: 1em;
+}
+
+.droplet.animation-in::after {
+    animation: droplet-tip-in 0.16s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes droplet-tip-in {
+    from {
+        border-top-left-radius: 0;
+    }
+    to {
+        border-top-left-radius: 50%;
+    }
+}
+
+.droplet.animation-out::after {
+    animation: droplet-tip-out 0.16s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes droplet-tip-out {
+    from {
+        border-top-left-radius: 50%;
+    }
+    to {
+        border-top-left-radius: 0;
+    }
 }

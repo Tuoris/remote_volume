@@ -15,7 +15,8 @@ var app = new Vue({
                 url: '/info',
             }).then(function (response) {
                 self.level = response.data.level;
-                self.muted = response.data.muted
+                self.muted = response.data.muted;
+                setDropletValue(response.data.level);
             });
         },
         changeLevel: function () {
