@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Volume</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/main.css') }}">
+</head>
+<body>
+    <div id="app" v-cloak>
+        <button id="mute-button" v-on:click="toggleMute">
+            <img v-if="!muted" src="{{ url_for('static', filename='./img/volume_on.png') }}" alt="volume on">
+            <img v-else src="{{ url_for('static', filename='./img/volume_mute.png') }}" alt="volume mute">
+        </button>
+        {% raw %}
+        <input class="level-controller" v-model="level" type="range" min="0" max="100" step="1" @change="changeLevel">
+        <span class="level">{{ level }}</span>
+        {% endraw %}
+    </div>
+    <script src="{{ url_for('static', filename='./js/axios.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='./js/vue.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='./js/main_old.js') }}"></script>
+</body>
+</html>

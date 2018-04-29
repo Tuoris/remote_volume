@@ -11,6 +11,10 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/old')
+def index_old():
+    return render_template('index_old.html')
+
 @app.route('/info', methods=['GET'])
 def get_level():
     level = volume.get_volume_level()
